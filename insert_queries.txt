@@ -1,0 +1,40 @@
+--insert address
+INSERT INTO Address VALUES (1,'Home','123','apple st','Windsor','ON','N9A B1C' );
+INSERT INTO Address VALUES (2,'Home','124','banana st','Windsor','ON','N9A B2C' );
+INSERT INTO Address VALUES (3,'Home','125','peach st','Windsor','ON','N9A B3C' );
+INSERT INTO Address VALUES (4,'Office','126','orange st','Windsor','ON','N9A B4C' );
+INSERT INTO Address VALUES (5,'Office','127','grape st','Windsor','ON','N9A B5C' );
+
+--insert customer
+INSERT INTO Customer VALUES (10001,1,'Mark','','abc1','5191000001','MobilePhone','101@gmail.com');
+INSERT INTO Customer VALUES (10002,2,'Thomas','','abc2','5191000002','MobilePhone','102@gmail.com');
+INSERT INTO Customer VALUES (10003,3,'Mark1','','abc3','5191000003','MobilePhone','103@gmail.com');
+
+--insert provider
+INSERT INTO Provider VALUES (20001,4,'abc company','519 200 0001','MobilePhone','qwe@gmail.com');
+INSERT INTO Provider VALUES (20002,5,'qwe company','519 200 0002','MobilePhone','iop@gmail.com');
+
+--insert account
+INSERT INTO CustomerAccount VALUES(30001,10001,20001,CAST (GETDATE() AS DATE));
+INSERT INTO CustomerAccount VALUES(30002,10002,20001,CAST (GETDATE() AS DATE));
+INSERT INTO CustomerAccount VALUES(30003,10003,20002,CAST (GETDATE() AS DATE));
+
+--Insert Rate
+INSERT INTO ServicesRate VALUES (40001,20001,'Water',$0.72);   --m^3
+INSERT INTO ServicesRate VALUES (40002,20001,'Natural Gas',$5.65); --gigajoule
+INSERT INTO ServicesRate VALUES (40003,20001,'Electric',$0.15); --kWh
+INSERT INTO ServicesRate VALUES (40004,20001,'Sewerage',$0.20); --m^3
+INSERT INTO ServicesRate VALUES (40005,20002,'Water',$0.70);   --m^3
+INSERT INTO ServicesRate VALUES (40006,20002,'Natural Gas',$5.60); --gigajoule
+INSERT INTO ServicesRate VALUES (40007,20002,'Electric',$0.20); --kWh
+INSERT INTO ServicesRate VALUES (40008,20002,'Sewerage',$0.15); --m^3
+
+--Insert bill
+INSERT INTO Customer_Bill VALUES (50001,30001,40001,0,3,3,30,CAST (GETDATE()-30 AS DATE),CAST (GETDATE() AS DATE),0.13,0.28,2.16,2.34,0,0,2.44);
+INSERT INTO Customer_Bill VALUES (50002,30002,40001,0,4,4,30,CAST (GETDATE()-30 AS DATE),CAST (GETDATE() AS DATE),0.13,0.37,2.88,2.16,0,0,3.25);
+INSERT INTO Customer_Bill VALUES (50003,30003,40001,0,5,5,30,CAST (GETDATE()-30 AS DATE),CAST (GETDATE() AS DATE),0.13,0.47,3.60,2.16,0,0,4.07);
+
+--Insert sales
+INSERT INTO ProviderSales VALUES (60001,50001,CAST (GETDATE()-30 AS DATE),2.34);
+INSERT INTO ProviderSales VALUES (60001,50002,CAST (GETDATE()-30 AS DATE),2.16);
+INSERT INTO ProviderSales VALUES (60001,50003,CAST (GETDATE()-30 AS DATE),2.16);

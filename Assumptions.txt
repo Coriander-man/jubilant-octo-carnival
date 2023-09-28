@@ -1,0 +1,14 @@
+Assumptions:
+A customer can have mutiple service accounts.
+A customer can have mutiple contact numbers, and can have only one email address.
+A customer can have up to three contact numbers, and only the primary contact number is mandary at the time of creating customer profile.
+A provider has only one contect number and email address.
+A customer can purchase services from different service providers. 
+TaxAmount is equals to ConsumptionCharge multiplied by TaxRate.
+TaxRate is calculated based on the province in the address table.
+Total amount in the Customer_Bill table is equals to OverdueAmount +TaxAmount
+If the customer pays the total amount by due date, then there will be no OverdueAmount and OverdueFine.
+TotalConsumptionUnit in the Customer_Bill table equals EndMeterReading minus StartMeterReading.
+Meter reading is taken only once on first calender date of every month.
+
+ 
